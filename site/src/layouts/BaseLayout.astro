@@ -8,13 +8,19 @@ interface Props {
   description?: string;
   active?: 'home' | 'about' | 'skills' | 'projects' | 'contact';
   hasRail?: boolean;
+  image?: string;
 }
 const {
   title,
   description = 'Jonathan Lukwichi — Simulation & Digital-Twin Engineer and founder of JLW Analytics. I build decision twins that answer the what-if, how-many and what-is-best questions, before the money is spent.',
   active = 'home',
   hasRail = false,
+  image = '/assets/jonathan.png',
 } = Astro.props;
+
+const siteUrl = Astro.site ?? new URL('https://jlwanalytics.com');
+const canonical = new URL(Astro.url.pathname, siteUrl).href;
+const ogImage = new URL(image, siteUrl).href;
 ---
 <!DOCTYPE html>
 <html lang="en">
@@ -23,7 +29,21 @@ const {
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>{title}</title>
   <meta name="description" content={description} />
+  <link rel="canonical" href={canonical} />
   <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+  <meta name="theme-color" content="#060606" />
+  <!-- Open Graph -->
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="JLW Analytics" />
+  <meta property="og:title" content={title} />
+  <meta property="og:description" content={description} />
+  <meta property="og:url" content={canonical} />
+  <meta property="og:image" content={ogImage} />
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content={title} />
+  <meta name="twitter:description" content={description} />
+  <meta name="twitter:image" content={ogImage} />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700;800&family=Manrope:wght@400;500;600;700&family=Space+Mono:wght@400;700&family=Cormorant+Garamond:ital,wght@0,600;0,700;1,600&display=swap" rel="stylesheet" />
