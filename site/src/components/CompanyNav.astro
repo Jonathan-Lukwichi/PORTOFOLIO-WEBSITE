@@ -1,0 +1,44 @@
+---
+// Company-site top navigation. `active` highlights the current page link.
+interface Props { active?: 'home' | 'services' | 'process' | 'work' | 'contact'; }
+const { active = 'home' } = Astro.props;
+
+const links = [
+  { key: 'home', label: 'Home', href: '/company' },
+  { key: 'services', label: 'Services', href: '/company/services' },
+  { key: 'process', label: 'Process', href: '/company/process' },
+  { key: 'work', label: 'Case Studies', href: '/company/work' },
+  { key: 'contact', label: 'Contact', href: '/company/contact' },
+];
+---
+<nav style="position:fixed; top:0; left:0; right:0; z-index:200; height:64px; display:flex; align-items:center; justify-content:center; background:rgba(6,6,6,0.82); backdrop-filter:blur(14px); -webkit-backdrop-filter:blur(14px); font-family:'Sora',sans-serif;">
+  <div style="width:100%; max-width:1240px; padding:0 clamp(18px,5vw,56px); display:flex; align-items:center; justify-content:space-between; box-sizing:border-box;">
+    <a href="/company" style="display:flex; align-items:center; gap:11px; text-decoration:none;">
+      <svg width="30" height="30" viewBox="0 0 32 32" style="display:block;"><defs><linearGradient id="lg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#22D3EE"></stop><stop offset="1" stop-color="#1E5AA8"></stop></linearGradient></defs><path d="M16 3 L27 11 L23 27 L9 27 L5 11 Z" fill="none" stroke="url(#lg)" stroke-width="1.6" stroke-linejoin="round"></path><path d="M16 3 L16 27 M5 11 L27 11 M16 3 L9 27 M16 3 L23 27" stroke="#0891B2" stroke-width="0.9" opacity="0.6"></path><path d="M16 3 L27 11 L16 14 Z" fill="#22D3EE" opacity="0.9"></path></svg>
+      <span style="font-family:'Sora',sans-serif; font-weight:800; font-size:18px; color:#ECEEF6; letter-spacing:-0.02em;">JLW<span style="font-weight:500; color:#A7AABB;"> Analytics</span></span>
+    </a>
+    <button class="jlw-burger" aria-label="Menu" style="background:none; border:1px solid rgba(255,255,255,0.14); border-radius:10px; width:42px; height:42px; cursor:pointer; align-items:center; justify-content:center; padding:0;">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#ECEEF6" stroke-width="2" stroke-linecap="round"><path d="M4 7h16"></path><path d="M4 12h16"></path><path d="M4 17h16"></path></svg>
+    </button>
+    <div class="jlw-navlinks" style="display:flex; align-items:center; gap:clamp(14px,2.2vw,30px);">
+      {links.map((l) => (
+        <a class="navlink" href={l.href} style={`position:relative; text-decoration:none; color:${active === l.key ? '#ECEEF6' : '#A7AABB'}; font-size:15px; font-weight:${active === l.key ? '700' : '500'}; padding:4px 0;`}>
+          {l.label}
+          {active === l.key && (<span style="position:absolute; left:0; bottom:-2px; width:18px; height:2px; background:linear-gradient(90deg,#22D3EE,#1E5AA8); border-radius:2px;"></span>)}
+        </a>
+      ))}
+      <a class="btn-primary" href="/company/contact" style="display:inline-flex; align-items:center; gap:8px; text-decoration:none; color:#FFFFFF; font-size:14px; font-weight:700; padding:10px 20px; border-radius:40px;">
+        Request a quote
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"></path><path d="M13 6l6 6-6 6"></path></svg>
+      </a>
+    </div>
+  </div>
+</nav>
+<script>
+  const burger = document.querySelector('.jlw-burger');
+  const links = document.querySelector('.jlw-navlinks');
+  if (burger && links) {
+    burger.addEventListener('click', () => links.classList.toggle('open'));
+    links.querySelectorAll('a').forEach((a) => a.addEventListener('click', () => links.classList.remove('open')));
+  }
+</script>

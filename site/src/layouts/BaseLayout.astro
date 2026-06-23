@@ -1,0 +1,48 @@
+---
+import '../styles/global.css';
+import SiteNav from '../components/SiteNav.astro';
+import SiteFooter from '../components/SiteFooter.astro';
+
+interface Props {
+  title: string;
+  description?: string;
+  active?: 'home' | 'about' | 'skills' | 'projects' | 'contact';
+  hasRail?: boolean;
+}
+const {
+  title,
+  description = 'Jonathan Lukwichi — Simulation & Digital-Twin Engineer and founder of JLW Analytics. I build decision twins that answer the what-if, how-many and what-is-best questions, before the money is spent.',
+  active = 'home',
+  hasRail = false,
+} = Astro.props;
+---
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>{title}</title>
+  <meta name="description" content={description} />
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700;800&family=Manrope:wght@400;500;600;700&family=Space+Mono:wght@400;700&family=Cormorant+Garamond:ital,wght@0,600;0,700;1,600&display=swap" rel="stylesheet" />
+</head>
+<body>
+  <!-- Global futuristic backdrop: perspective grid + glow orbs + scanlines -->
+  <div class="fx-bg" aria-hidden="true"></div>
+  <div class:list={['jlw-shell', 'fx-shell', { 'has-rail': hasRail }]} style="background:transparent; min-height:100vh; font-family:'Manrope',sans-serif; color:#ECF1FF; overflow-x:hidden; padding-top:64px;">
+    <SiteNav active={active} />
+    <slot name="rail" />
+    <slot />
+    <SiteFooter />
+  </div>
+  <script is:inline src="/reveal.js"></script>
+  <script is:inline src="/fx.js"></script>
+  <script is:inline>
+    window.addEventListener('load', function () {
+      if (window.__jlwReveal) window.__jlwReveal(document);
+    });
+  </script>
+</body>
+</html>

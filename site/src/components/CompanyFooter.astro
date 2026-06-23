@@ -1,0 +1,53 @@
+---
+// Company-site footer.
+const solutions = [
+  { label: 'Simulation & digital twins', href: '/company/services' },
+  { label: 'Forecasting & ML', href: '/company/services' },
+  { label: 'Supply-chain & operations', href: '/company/services' },
+  { label: 'Decision tooling', href: '/company/services' },
+];
+const company = [
+  { label: 'Process', href: '/company/process' },
+  { label: 'Case studies', href: '/company/work' },
+  { label: 'Contact', href: '/company/contact' },
+  { label: 'Founder ↗', href: '/' },
+];
+---
+<footer style="position:relative; background:rgba(8,9,12,0.7); color:#C4CDE8; font-family:'Sora',sans-serif; padding:clamp(48px,7vw,84px) clamp(20px,5vw,56px) 36px; border-top:1px solid rgba(34,211,238,0.14);">
+  <div style="max-width:1240px; margin:0 auto; display:flex; flex-wrap:wrap; gap:48px; justify-content:space-between; align-items:flex-start;">
+    <div style="max-width:360px;">
+      <div style="display:flex; align-items:center; gap:11px; margin-bottom:18px;">
+        <svg width="32" height="32" viewBox="0 0 32 32"><defs><linearGradient id="lgf" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#22D3EE"></stop><stop offset="1" stop-color="#1E5AA8"></stop></linearGradient></defs><path d="M16 3 L27 11 L23 27 L9 27 L5 11 Z" fill="none" stroke="url(#lgf)" stroke-width="1.6" stroke-linejoin="round"></path><path d="M16 3 L16 27 M5 11 L27 11 M16 3 L9 27 M16 3 L23 27" stroke="#0891B2" stroke-width="0.9" opacity="0.6"></path><path d="M16 3 L27 11 L16 14 Z" fill="#22D3EE" opacity="0.9"></path></svg>
+        <span style="font-family:'Sora',sans-serif; font-weight:800; font-size:19px; color:#ECEEF6; letter-spacing:-0.02em;">JLW Analytics</span>
+      </div>
+      <p style="margin:0 0 18px; font-size:15px; line-height:1.7; color:#A7AABB;">Decision twins for operations: simulation and machine learning that prove the value of a change before the money is spent.</p>
+      <div style="font-family:'Space Mono',monospace; font-size:12px; color:#6B7080;">Pretoria, South Africa · EN / FR</div>
+    </div>
+    <div style="display:flex; gap:clamp(40px,6vw,80px); flex-wrap:wrap;">
+      <div>
+        <div style="font-family:'Space Mono',monospace; font-size:11px; letter-spacing:0.16em; text-transform:uppercase; color:#22D3EE; margin-bottom:16px;">Solutions</div>
+        <div style="display:flex; flex-direction:column; gap:11px;">
+          {solutions.map((l) => (<a class="flink" href={l.href} style="text-decoration:none; color:#AEB8D6; font-size:14.5px;">{l.label}</a>))}
+        </div>
+      </div>
+      <div>
+        <div style="font-family:'Space Mono',monospace; font-size:11px; letter-spacing:0.16em; text-transform:uppercase; color:#22D3EE; margin-bottom:16px;">Company</div>
+        <div style="display:flex; flex-direction:column; gap:11px;">
+          {company.map((l) => (<a class="flink" href={l.href} style="text-decoration:none; color:#AEB8D6; font-size:14.5px;">{l.label}</a>))}
+        </div>
+      </div>
+      <div>
+        <div style="font-family:'Space Mono',monospace; font-size:11px; letter-spacing:0.16em; text-transform:uppercase; color:#22D3EE; margin-bottom:16px;">Contact</div>
+        <div style="display:flex; flex-direction:column; gap:11px;">
+          <a class="flink" href="tel:+27847314600" style="text-decoration:none; color:#AEB8D6; font-size:14.5px;">+27 84 731 4600</a>
+          <a class="flink" href="mailto:jonathanlukwichi29@gmail.com" style="text-decoration:none; color:#AEB8D6; font-size:14.5px;">jonathanlukwichi29@gmail.com</a>
+          <a class="flink" href="https://linkedin.com/in/jonathan-lukwichi-24691b24b" target="_blank" rel="noopener" style="text-decoration:none; color:#AEB8D6; font-size:14.5px;">LinkedIn</a>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div style="max-width:1240px; margin:40px auto 0; padding-top:24px; border-top:1px solid rgba(255,255,255,0.08); display:flex; flex-wrap:wrap; gap:12px; justify-content:space-between; color:#6B7080; font-size:13px;">
+    <span>© 2026 JLW Analytics · Pretoria, South Africa</span>
+    <span style="font-family:'Space Mono',monospace;">Decisions, proven before the spend.</span>
+  </div>
+</footer>

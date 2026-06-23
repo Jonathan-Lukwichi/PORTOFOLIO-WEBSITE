@@ -1,0 +1,86 @@
+---
+import CompanyLayout from '../../layouts/CompanyLayout.astro';
+import { projects, filters } from '../../data/projects';
+---
+<CompanyLayout title="Case Studies — JLW Analytics" active="work">
+  <!-- HEADER -->
+  <section data-reveal style="max-width:1240px; margin:0 auto; padding:clamp(40px,6vw,80px) clamp(20px,5vw,56px) clamp(20px,3vw,32px); opacity:1; transform:translateY(20px); transition:transform .8s cubic-bezier(.2,.7,.2,1);">
+    <div style="font-family:'Space Mono',monospace; font-size:13px; letter-spacing:0.18em; text-transform:uppercase; color:#22D3EE; margin-bottom:16px;">// Case studies</div>
+    <h1 data-split style="font-family:'Sora',sans-serif; font-weight:800; font-size:clamp(34px,5vw,62px); line-height:1.05; letter-spacing:-0.03em; margin:0 0 18px; max-width:840px; color:#ECEEF6;">Fifteen delivered decision twins, across twelve industries.</h1>
+    <p style="font-size:17.5px; line-height:1.7; color:#A7AABB; max-width:720px; margin:0;">Each pairs a working simulation with a machine-learning layer, with the value measured against a no-learning baseline. The outcomes below are delivered results, calibrated on realistic operational data.</p>
+  </section>
+
+  <!-- FILTER -->
+  <section data-reveal style="max-width:1240px; margin:0 auto; padding:clamp(16px,3vw,28px) clamp(20px,5vw,56px) clamp(8px,2vw,16px); opacity:1; transform:translateY(18px); transition:transform .8s cubic-bezier(.2,.7,.2,1);">
+    <div id="filterbar" style="display:flex; flex-wrap:wrap; gap:10px;">
+      {filters.map((f, i) => (
+        <button data-filter={f.key} style={`cursor:pointer; font-family:'Sora',sans-serif; font-size:14px; font-weight:600; padding:9px 17px; border-radius:30px; transition:all .2s; ${i === 0 ? 'border:1px solid transparent; background:linear-gradient(120deg,#0891B2,#1E5AA8); color:#FFFFFF;' : 'border:1px solid rgba(255,255,255,0.12); background:rgba(18,20,26,0.6); color:#B4BEDC;'}`} set:html={f.label}></button>
+      ))}
+    </div>
+  </section>
+
+  <!-- GRID -->
+  <section style="max-width:1240px; margin:0 auto; padding:clamp(16px,2vw,24px) clamp(20px,5vw,56px) clamp(48px,7vw,88px);">
+    <div id="grid" style="display:grid; grid-template-columns:repeat(auto-fill,minmax(min(340px,100%),1fr)); gap:18px;">
+      {projects.map((p) => (
+        <div class="pcard" data-reveal data-group={p.group} style="opacity:1; transform:translateY(24px); transition:transform .7s cubic-bezier(.2,.7,.2,1), border-color .3s, box-shadow .3s; border-radius:22px; padding:28px 26px; display:flex; flex-direction:column;">
+          <div style="display:flex; align-items:center; justify-content:space-between; margin-bottom:16px;">
+            <span style="font-family:'Sora',sans-serif; font-weight:800; font-size:28px; line-height:1; background:linear-gradient(140deg,#22D3EE,#1E5AA8); -webkit-background-clip:text; background-clip:text; -webkit-text-fill-color:transparent;">{p.n}</span>
+            <span style="font-family:'Space Mono',monospace; font-size:10.5px; letter-spacing:0.1em; text-transform:uppercase; color:#6B7080; text-align:right; max-width:160px;">{p.sector}</span>
+          </div>
+          <h3 style="font-family:'Sora',sans-serif; font-weight:700; font-size:20px; line-height:1.25; margin:0 0 14px; color:#ECEEF6;">{p.title}</h3>
+          <div style="background:rgba(8,145,178,0.1); border:1px solid rgba(34,211,238,0.2); border-radius:12px; padding:12px 14px; margin-bottom:18px;">
+            <div style="font-family:'Space Mono',monospace; font-size:10px; letter-spacing:0.12em; text-transform:uppercase; color:#22D3EE; margin-bottom:4px;">Result</div>
+            <div style="font-size:15px; font-weight:600; line-height:1.4; color:#ECEEF6;">{p.metric}</div>
+          </div>
+          <div style="margin-bottom:13px;">
+            <div style="font-family:'Space Mono',monospace; font-size:10px; letter-spacing:0.12em; text-transform:uppercase; color:#6B7080; margin-bottom:4px;">Challenge</div>
+            <p style="font-size:14px; line-height:1.55; color:#A7AABB; margin:0;">{p.challenge}</p>
+          </div>
+          <div style="margin-bottom:18px;">
+            <div style="font-family:'Space Mono',monospace; font-size:10px; letter-spacing:0.12em; text-transform:uppercase; color:#6B7080; margin-bottom:4px;">Approach</div>
+            <p style="font-size:14px; line-height:1.55; color:#A7AABB; margin:0;">{p.approach}</p>
+          </div>
+          <div style="margin-top:auto; display:flex; flex-wrap:wrap; gap:7px;">
+            {p.tags.map((tag) => (<span style="font-family:'Space Mono',monospace; font-size:11px; background:rgba(255,255,255,0.06); color:#B4BEDC; padding:5px 10px; border-radius:20px;">{tag}</span>))}
+          </div>
+        </div>
+      ))}
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section data-reveal style="max-width:1240px; margin:0 auto; padding:0 clamp(20px,5vw,56px) clamp(56px,8vw,104px); opacity:1; transform:translateY(26px); transition:transform .8s cubic-bezier(.2,.7,.2,1);">
+    <div style="background:linear-gradient(120deg,#0891B2,#1E5AA8); border-radius:28px; padding:clamp(34px,5vw,60px); color:#FFFFFF; text-align:center;">
+      <h2 style="font-family:'Sora',sans-serif; font-weight:800; font-size:clamp(26px,3.6vw,42px); line-height:1.1; letter-spacing:-0.025em; margin:0 auto 14px; max-width:620px;">Your operation could be the next case study.</h2>
+      <p style="font-size:17px; line-height:1.6; margin:0 auto 28px; max-width:560px; color:rgba(255,255,255,0.85);">A small, fixed-scope pilot on your own data — with a clear recommendation and the numbers behind it.</p>
+      <div style="display:flex; flex-wrap:wrap; gap:14px; justify-content:center;">
+        <a class="ctabtn" href="/company/contact?type=quote" style="display:inline-flex; align-items:center; gap:10px; text-decoration:none; background:#060606; color:#ECEEF6; font-weight:700; font-size:16px; padding:15px 30px; border-radius:44px;">Request a quote
+          <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"></path><path d="M13 6l6 6-6 6"></path></svg>
+        </a>
+        <a class="btn-ghost" href="/company/contact?type=consult" style="display:inline-flex; align-items:center; text-decoration:none; background:rgba(255,255,255,0.12); color:#FFFFFF; font-weight:600; font-size:16px; padding:15px 28px; border-radius:44px; border:1.5px solid rgba(255,255,255,0.35);">Book a free consult</a>
+      </div>
+    </div>
+  </section>
+</CompanyLayout>
+
+<script>
+  const btns = Array.from(document.querySelectorAll<HTMLButtonElement>('[data-filter]'));
+  const cards = Array.from(document.querySelectorAll<HTMLElement>('[data-group]'));
+  btns.forEach((b) => {
+    b.addEventListener('click', () => {
+      const f = b.getAttribute('data-filter');
+      btns.forEach((x) => {
+        const on = x === b;
+        x.style.background = on ? 'linear-gradient(120deg,#0891B2,#1E5AA8)' : 'rgba(18,20,26,0.6)';
+        x.style.color = on ? '#FFFFFF' : '#B4BEDC';
+        x.style.borderColor = on ? 'transparent' : 'rgba(255,255,255,0.12)';
+      });
+      cards.forEach((c) => {
+        const show = f === 'all' || c.getAttribute('data-group') === f;
+        c.style.display = show ? 'flex' : 'none';
+        if (show) { c.style.transform = 'none'; c.style.opacity = '1'; }
+      });
+    });
+  });
+</script>

@@ -1,0 +1,13 @@
+# Netlify deploy config for the JLW Analytics site.
+# The Astro project lives in the `site/` subfolder.
+# Netlify UI: connect the repo, leave settings to this file.
+[build]
+  base = "site"
+  command = "npm run build"
+  publish = "dist"
+
+[build.environment]
+  NODE_VERSION = "20"
+
+# Static multi-page site — no SPA redirect needed.
+# (Astro emits /index.html, /company/index.html, etc.)

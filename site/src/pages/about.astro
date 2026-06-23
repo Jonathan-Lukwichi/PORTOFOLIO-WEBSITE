@@ -1,0 +1,116 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+const competencies = [
+  { title: 'Multi-method simulation', desc: 'Discrete-event, agent-based and system-dynamics models — and the hybrids between them.' },
+  { title: 'Forecasting & predictive modelling', desc: 'Time-series forecasting, survival and classification models that drive the policy a model runs under.' },
+  { title: 'Optimisation', desc: 'Evolutionary and multi-objective search for scheduling, fleet and resource decisions.' },
+  { title: 'Digital-twin architecture', desc: 'From a clean data model to a live feed that mirrors the operation in real time.' },
+  { title: 'Supply-chain, fleet & process optimisation', desc: 'Multi-echelon inventory, dispatch, network design and bullwhip control.' },
+  { title: 'Data pipelines & decision tooling', desc: 'Pipeline design and decision-support tools that put the model in front of the people who decide.' },
+];
+
+const disciplines = [
+  { field: 'Software Engineering', master: 'Building the systems, apps and data pipelines that run an operation.', question: 'What logic and policy should that software actually implement? I model the real process under randomness and load, so it is built around the right decisions, not a guess.' },
+  { field: 'Mechanical Engineering', master: 'Designing the machine, line, conveyor or truck to perform at its design point.', question: 'In real operation — with surges, queues and breakdowns — what is the true throughput, where is the bottleneck, and which configuration is best?' },
+  { field: 'Electrical Engineering', master: 'Power, drives, instrumentation and control that keep machines running.', question: 'Across a whole fleet over years, what maintenance and sensor strategy minimises cost and downtime — and what is a single sensor actually worth?' },
+  { field: 'Robotics & Mechatronics', master: 'Building robots, sensors and automated cells that move and sense.', question: 'How many robots, what task allocation and what layout give the best throughput — tested before deployment — and how does the cell behave under real demand and failure?' },
+  { field: 'Operations Management', master: 'Running the operation and reading dashboards of what already happened.', question: 'What happens if we change staffing, fleet, layout or policy — proven safely before touching the live operation?' },
+  { field: 'AI & Data Analytics', master: 'Predicting outcomes and finding patterns in data.', question: 'Given the prediction, what decision is optimal across an interacting system over time — and what is the prediction actually worth?' },
+];
+
+const snapshot = [
+  { title: 'Methods', desc: 'Discrete-event, agent-based, system-dynamics, pedestrian and geospatial models — and the multi-method hybrids between them.' },
+  { title: 'Learning in the loop', desc: 'Forecasting, survival models, classification, surrogates and optimisation — each measured by a baseline-versus-learning test.' },
+  { title: 'Delivery', desc: 'A simulation engine for the answer; 3D and live-twin environments for the visual and the real-time connection to the floor.' },
+];
+---
+<BaseLayout title="About — Jonathan Lukwichi | JLW Analytics" active="about">
+  <!-- INTRO -->
+  <section style="max-width:1240px; margin:0 auto; padding:clamp(40px,6vw,80px) clamp(20px,5vw,56px) clamp(30px,4vw,48px); display:flex; flex-wrap:wrap; gap:clamp(36px,5vw,72px); align-items:center;">
+    <div data-reveal style="flex:1 1 420px; min-width:260px; opacity:1; transform:translateY(20px); transition:transform .8s cubic-bezier(.2,.7,.2,1);">
+      <div style="font-family:'Space Mono',monospace; font-size:13px; letter-spacing:0.18em; text-transform:uppercase; color:#4F7CFF; margin-bottom:16px;">&lt;/&gt; About</div>
+      <h1 data-split style="font-family:'Sora',sans-serif; font-weight:800; font-size:clamp(32px,5vw,62px); line-height:1.05; letter-spacing:-0.03em; margin:0 0 22px; color:#ECF1FF;">The bridge between knowing a system and deciding about it.</h1>
+      <p style="font-size:17.5px; line-height:1.75; color:#B4BEDC; margin:0 0 18px;">MSc Industrial Engineering candidate at the University of Pretoria and founder of JLW Analytics, I pair a hands-on engineering foundation — electromechanical systems, mining instrumentation and process control — with applied machine learning and multi-method simulation.</p>
+      <p style="font-size:17.5px; line-height:1.75; color:#B4BEDC; margin:0;">My work sits where most analytics stops: not reporting what happened, but testing what to change <em style="font-style:normal; font-weight:700; color:#4F7CFF;">before the money is spent</em>.</p>
+    </div>
+    <div data-reveal style="flex:0 1 360px; min-width:240px; opacity:1; transform:translateY(20px); transition:transform .8s cubic-bezier(.2,.7,.2,1); display:flex; justify-content:center;">
+      <div style="position:relative; width:min(340px,80vw);">
+        <div style="position:absolute; inset:-20px -16px -14px -20px; border-radius:46% 54% 56% 44% / 50% 44% 56% 50%; background:radial-gradient(circle at 50% 40%, rgba(79,124,255,0.28), transparent 68%); filter:blur(6px); animation:blobA 13s ease-in-out infinite;"></div>
+        <div style="position:relative; border-radius:26px 26px 26px 52px; overflow:hidden; aspect-ratio:4/5; box-shadow:0 26px 60px rgba(0,0,0,0.5); border:1px solid rgba(79,124,255,0.25);">
+          <img src="/assets/jonathan.png" alt="Jonathan Lukwichi" width="340" height="425" style="width:100%; height:100%; object-fit:cover; object-position:55% 18%; display:block;" />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- QUOTE -->
+  <section data-reveal style="max-width:1100px; margin:0 auto; padding:clamp(24px,4vw,48px) clamp(20px,5vw,56px); opacity:1; transform:translateY(24px); transition:transform .8s cubic-bezier(.2,.7,.2,1);">
+    <blockquote style="margin:0; font-family:'Sora',sans-serif; font-weight:600; font-size:clamp(20px,3vw,34px); line-height:1.3; letter-spacing:-0.02em; color:#ECF1FF; border-left:3px solid #4F7CFF; padding-left:clamp(20px,3vw,34px);">"I build decision twins: simulation and machine learning that answer the what-if, how-many and what-is-best questions, before the money is spent."</blockquote>
+  </section>
+
+  <!-- COMPETENCIES -->
+  <section data-reveal style="max-width:1240px; margin:0 auto; padding:clamp(48px,7vw,96px) clamp(20px,5vw,56px); opacity:1; transform:translateY(26px); transition:transform .8s cubic-bezier(.2,.7,.2,1);">
+    <div style="font-family:'Space Mono',monospace; font-size:13px; letter-spacing:0.18em; text-transform:uppercase; color:#4F7CFF; margin-bottom:14px;">// Core competencies</div>
+    <h2 style="font-family:'Sora',sans-serif; font-weight:800; font-size:clamp(26px,3.8vw,46px); line-height:1.1; letter-spacing:-0.025em; margin:0 0 40px; max-width:640px; color:#ECF1FF;">What I actually do, end to end.</h2>
+    <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(min(280px,100%),1fr)); gap:18px;">
+      {competencies.map((c) => (
+        <div class="mcard" style="background:#111A33; border:1px solid rgba(255,255,255,0.07); border-radius:20px; padding:28px 26px; transition:transform .3s, border-color .3s;">
+          <div style="width:40px; height:40px; border-radius:11px; background:rgba(79,124,255,0.12); display:flex; align-items:center; justify-content:center; margin-bottom:16px;">
+            <span style="width:14px; height:14px; border-radius:4px; background:#4F7CFF; display:inline-block;"></span>
+          </div>
+          <h3 style="font-family:'Sora',sans-serif; font-weight:700; font-size:19px; margin:0 0 9px; line-height:1.25; color:#ECF1FF;">{c.title}</h3>
+          <p style="font-size:15px; line-height:1.6; color:#94A1C4; margin:0;">{c.desc}</p>
+        </div>
+      ))}
+    </div>
+  </section>
+
+  <!-- CAPABILITY SNAPSHOT -->
+  <section data-reveal style="background:#070C1A; border-top:1px solid rgba(255,255,255,0.06); border-bottom:1px solid rgba(255,255,255,0.06); color:#C4CDE8; opacity:1; transform:translateY(26px); transition:transform .8s cubic-bezier(.2,.7,.2,1);">
+    <div style="max-width:1240px; margin:0 auto; padding:clamp(48px,7vw,92px) clamp(20px,5vw,56px);">
+      <div style="font-family:'Space Mono',monospace; font-size:13px; letter-spacing:0.18em; text-transform:uppercase; color:#4F7CFF; margin-bottom:14px;">// Capability snapshot</div>
+      <h2 style="font-family:'Sora',sans-serif; font-weight:800; font-size:clamp(26px,3.8vw,46px); line-height:1.1; letter-spacing:-0.025em; margin:0 0 44px; color:#ECF1FF; max-width:680px;">One method, measured every time.</h2>
+      <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(min(260px,100%),1fr)); gap:28px;">
+        {snapshot.map((s) => (
+          <div style="border-top:2px solid #4F7CFF; padding-top:22px;">
+            <h3 style="font-family:'Sora',sans-serif; font-weight:700; font-size:20px; margin:0 0 12px; color:#ECF1FF;">{s.title}</h3>
+            <p style="font-size:15.5px; line-height:1.65; color:#94A1C4; margin:0;">{s.desc}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- POSITIONING -->
+  <section data-reveal style="max-width:1240px; margin:0 auto; padding:clamp(48px,7vw,96px) clamp(20px,5vw,56px); opacity:1; transform:translateY(26px); transition:transform .8s cubic-bezier(.2,.7,.2,1);">
+    <div style="font-family:'Space Mono',monospace; font-size:13px; letter-spacing:0.18em; text-transform:uppercase; color:#4F7CFF; margin-bottom:14px;">// Where I fit</div>
+    <h2 style="font-family:'Sora',sans-serif; font-weight:800; font-size:clamp(26px,3.8vw,46px); line-height:1.1; letter-spacing:-0.025em; margin:0 0 16px; max-width:760px; color:#ECF1FF;">The questions other disciplines can't answer alone.</h2>
+    <p style="font-size:17px; line-height:1.7; color:#94A1C4; max-width:680px; margin:0 0 44px;">Specialists own their systems. What they rarely have is a safe way to answer the forward-looking, system-level questions — and that is exactly where I work.</p>
+    <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(min(320px,100%),1fr)); gap:18px;">
+      {disciplines.map((d) => (
+        <div class="mcard" style="background:#111A33; border:1px solid rgba(255,255,255,0.07); border-radius:20px; padding:30px 28px; transition:transform .3s, border-color .3s;">
+          <h3 style="font-family:'Sora',sans-serif; font-weight:700; font-size:21px; margin:0 0 16px; color:#ECF1FF;">{d.field}</h3>
+          <div style="font-family:'Space Mono',monospace; font-size:11px; letter-spacing:0.12em; text-transform:uppercase; color:#5F6B8E; margin-bottom:6px;">They master</div>
+          <p style="font-size:15px; line-height:1.6; color:#94A1C4; margin:0 0 18px;">{d.master}</p>
+          <div style="font-family:'Space Mono',monospace; font-size:11px; letter-spacing:0.12em; text-transform:uppercase; color:#4F7CFF; margin-bottom:6px;">The question I answer</div>
+          <p style="font-size:15px; line-height:1.6; color:#D6DDF2; margin:0; font-weight:500;">{d.question}</p>
+        </div>
+      ))}
+    </div>
+    <p style="font-size:16.5px; line-height:1.7; color:#94A1C4; max-width:760px; margin:40px 0 0;">The common thread: take the real system, make a living model of it, put a learning layer inside, and prove the value of a decision by comparing the world with and without it. The discipline supplies the system; I supply the way to decide about it.</p>
+  </section>
+
+  <!-- CTA -->
+  <section data-reveal style="max-width:1240px; margin:0 auto; padding:0 clamp(20px,5vw,56px) clamp(56px,8vw,104px); opacity:1; transform:translateY(26px); transition:transform .8s cubic-bezier(.2,.7,.2,1);">
+    <div style="background:#111A33; border:1px solid rgba(255,255,255,0.08); border-radius:26px; padding:clamp(32px,5vw,56px); display:flex; flex-wrap:wrap; gap:24px; align-items:center; justify-content:space-between;">
+      <div style="flex:1 1 340px;">
+        <h2 style="font-family:'Sora',sans-serif; font-weight:800; font-size:clamp(23px,3vw,34px); line-height:1.15; letter-spacing:-0.02em; margin:0 0 8px; color:#ECF1FF;">See the method on real operations.</h2>
+        <p style="font-size:16px; color:#94A1C4; margin:0;">Fifteen delivered case studies across twelve industries — plus the platform we're building now.</p>
+      </div>
+      <a class="btn-primary" href="/projects" style="display:inline-flex; align-items:center; gap:10px; text-decoration:none; background:#4F7CFF; color:#FFFFFF; font-weight:700; font-size:16px; padding:15px 28px; border-radius:44px; box-shadow:0 14px 30px rgba(79,124,255,0.28); transition:transform .25s;">Explore the projects
+        <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"></path><path d="M13 6l6 6-6 6"></path></svg>
+      </a>
+    </div>
+  </section>
+</BaseLayout>

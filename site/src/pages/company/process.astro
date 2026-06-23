@@ -1,0 +1,58 @@
+---
+import CompanyLayout from '../../layouts/CompanyLayout.astro';
+
+const steps = [
+  { n: '01', title: 'Discover', dur: 'Week 1', desc: 'We scope one high-value decision and agree the question, the data and the measure of success. Then we pull your real data — spreadsheet, ERP export or sensor feed — and clean it into a proper model input.', points: ['One decision, clearly scoped', 'Data audit & clean-up', 'Agreed success metric'] },
+  { n: '02', title: 'Model', dur: 'Weeks 2–3', desc: 'We build a living simulation of the operation with the surges, queues and breakdowns intact, and put a machine-learning layer inside it to drive the policy it runs under.', points: ['Calibrated simulation of the operation', 'Learning layer for the policy', 'Validated against historical behaviour'] },
+  { n: '03', title: 'Prove', dur: 'Week 4', desc: 'We run today’s rules against the learning-driven policy on your own data and measure the money value of the change — with confidence ranges, not a single hopeful number — before anything touches the live operation.', points: ['Baseline vs policy comparison', 'Money value with confidence ranges', 'Clear, numbers-backed recommendation'] },
+  { n: '04', title: 'Deploy', dur: 'Ongoing', desc: 'We ship the recommendation as a decision tool or a live twin your team actually uses, and keep it calibrated as the operation evolves so the value holds over time.', points: ['Decision tool or live twin', 'Handover & training', 'Calibration & monitoring'] },
+];
+---
+<CompanyLayout title="Process — JLW Analytics" active="process">
+  <!-- HEADER -->
+  <section data-reveal style="max-width:1240px; margin:0 auto; padding:clamp(40px,6vw,80px) clamp(20px,5vw,56px) clamp(20px,3vw,32px); opacity:1; transform:translateY(20px); transition:transform .8s cubic-bezier(.2,.7,.2,1);">
+    <div style="font-family:'Space Mono',monospace; font-size:13px; letter-spacing:0.18em; text-transform:uppercase; color:#22D3EE; margin-bottom:16px;">// How we work</div>
+    <h1 data-split style="font-family:'Sora',sans-serif; font-weight:800; font-size:clamp(34px,5vw,62px); line-height:1.05; letter-spacing:-0.03em; margin:0 0 18px; max-width:840px; color:#ECEEF6;">A small, fixed-scope path from question to proof.</h1>
+    <p style="font-size:17.5px; line-height:1.7; color:#A7AABB; max-width:720px; margin:0;">Every engagement starts small and fixed-price. You see the proof on your own data before any decision touches the live operation — and before any larger commitment.</p>
+  </section>
+
+  <!-- TIMELINE -->
+  <section style="max-width:1240px; margin:0 auto; padding:clamp(24px,4vw,48px) clamp(20px,5vw,56px) clamp(40px,6vw,72px);">
+    <div style="display:flex; flex-direction:column; gap:18px;">
+      {steps.map((s) => (
+        <div class="mcard" data-reveal style="opacity:1; transform:translateY(22px); transition:transform .7s cubic-bezier(.2,.7,.2,1), border-color .3s, box-shadow .3s; border-radius:22px; padding:clamp(26px,3.5vw,40px); display:flex; flex-wrap:wrap; gap:28px; align-items:flex-start;">
+          <div style="flex:0 0 auto;">
+            <div style="font-family:'Sora',sans-serif; font-weight:800; font-size:clamp(40px,6vw,64px); line-height:1; background:linear-gradient(140deg,#22D3EE,#1E5AA8); -webkit-background-clip:text; background-clip:text; -webkit-text-fill-color:transparent;">{s.n}</div>
+            <div style="font-family:'Space Mono',monospace; font-size:11px; letter-spacing:0.14em; text-transform:uppercase; color:#6B7080; margin-top:8px;">{s.dur}</div>
+          </div>
+          <div style="flex:1 1 360px; min-width:260px;">
+            <h2 style="font-family:'Sora',sans-serif; font-weight:700; font-size:clamp(22px,3vw,28px); margin:0 0 12px; color:#ECEEF6;">{s.title}</h2>
+            <p style="font-size:16px; line-height:1.7; color:#A7AABB; margin:0 0 18px; max-width:680px;">{s.desc}</p>
+            <div style="display:flex; flex-wrap:wrap; gap:10px;">
+              {s.points.map((p) => (
+                <span style="display:inline-flex; align-items:center; gap:8px; font-size:13.5px; font-weight:600; color:#C4CDE8; background:rgba(8,145,178,0.08); border:1px solid rgba(34,211,238,0.18); border-radius:30px; padding:8px 14px;">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#22D3EE" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"></path></svg>
+                  {p}
+                </span>
+              ))}
+            </div>
+          </div>
+        </div>
+      ))}
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section data-reveal style="max-width:1240px; margin:0 auto; padding:0 clamp(20px,5vw,56px) clamp(56px,8vw,104px); opacity:1; transform:translateY(26px); transition:transform .8s cubic-bezier(.2,.7,.2,1);">
+    <div style="background:linear-gradient(120deg,#0891B2,#1E5AA8); border-radius:28px; padding:clamp(34px,5vw,60px); color:#FFFFFF; text-align:center;">
+      <h2 style="font-family:'Sora',sans-serif; font-weight:800; font-size:clamp(26px,3.6vw,42px); line-height:1.1; letter-spacing:-0.025em; margin:0 auto 14px; max-width:620px;">Four weeks to a decision you can defend.</h2>
+      <p style="font-size:17px; line-height:1.6; margin:0 auto 28px; max-width:560px; color:rgba(255,255,255,0.85);">Bring the question. We'll scope the pilot and send a fixed-price quote.</p>
+      <div style="display:flex; flex-wrap:wrap; gap:14px; justify-content:center;">
+        <a class="ctabtn" href="/company/contact?type=quote" style="display:inline-flex; align-items:center; gap:10px; text-decoration:none; background:#060606; color:#ECEEF6; font-weight:700; font-size:16px; padding:15px 30px; border-radius:44px;">Request a quote
+          <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"></path><path d="M13 6l6 6-6 6"></path></svg>
+        </a>
+        <a class="btn-ghost" href="/company/contact?type=consult" style="display:inline-flex; align-items:center; text-decoration:none; background:rgba(255,255,255,0.12); color:#FFFFFF; font-weight:600; font-size:16px; padding:15px 28px; border-radius:44px; border:1.5px solid rgba(255,255,255,0.35);">Book a free consult</a>
+      </div>
+    </div>
+  </section>
+</CompanyLayout>

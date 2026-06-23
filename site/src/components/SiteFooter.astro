@@ -1,0 +1,44 @@
+---
+// Shared site footer.
+const explore = [
+  { label: 'Home', href: '/' },
+  { label: 'About', href: '/about' },
+  { label: 'Skills & Experience', href: '/skills' },
+  { label: 'Projects', href: '/projects' },
+  { label: 'Vision & Contact', href: '/contact' },
+];
+---
+<footer style="background:#070C1A; color:#C4CDE8; font-family:'Manrope',sans-serif; padding:clamp(48px,7vw,84px) clamp(20px,5vw,56px) 36px; border-top:1px solid rgba(255,255,255,0.07);">
+  <div style="max-width:1240px; margin:0 auto; display:flex; flex-wrap:wrap; gap:48px; justify-content:space-between; align-items:flex-start;">
+    <div style="max-width:360px;">
+      <div style="display:flex; align-items:center; gap:11px; margin-bottom:18px;">
+        <svg width="32" height="32" viewBox="0 0 32 32"><path d="M16 3 L27 11 L23 27 L9 27 L5 11 Z" fill="none" stroke="#4F7CFF" stroke-width="1.6" stroke-linejoin="round"></path><path d="M16 3 L16 27 M5 11 L27 11 M16 3 L9 27 M16 3 L23 27" stroke="#4F7CFF" stroke-width="0.9" opacity="0.55"></path><path d="M16 3 L27 11 L16 14 Z" fill="#7C5CFF" opacity="0.9"></path></svg>
+        <span style="font-family:'Sora',sans-serif; font-weight:800; font-size:19px; color:#ECF1FF; letter-spacing:-0.02em;">JLW Analytics</span>
+      </div>
+      <p style="margin:0; font-size:15px; line-height:1.7; color:#94A1C4;">Simulation &amp; digital-twin engineering. I build decision twins that answer the what-if, how-many and what-is-best questions, before the money is spent.</p>
+    </div>
+    <div style="display:flex; gap:clamp(40px,6vw,88px); flex-wrap:wrap;">
+      <div>
+        <div style="font-family:'Space Mono',monospace; font-size:11px; letter-spacing:0.16em; text-transform:uppercase; color:#4F7CFF; margin-bottom:16px;">Explore</div>
+        <div style="display:flex; flex-direction:column; gap:11px;">
+          {explore.map((l) => (
+            <a class="flink" href={l.href} style="text-decoration:none; color:#AEB8D6; font-size:14.5px;">{l.label}</a>
+          ))}
+        </div>
+      </div>
+      <div>
+        <div style="font-family:'Space Mono',monospace; font-size:11px; letter-spacing:0.16em; text-transform:uppercase; color:#4F7CFF; margin-bottom:16px;">Contact</div>
+        <div style="display:flex; flex-direction:column; gap:11px;">
+          <a class="flink" href="tel:+27847314600" style="text-decoration:none; color:#AEB8D6; font-size:14.5px;">+27 84 731 4600</a>
+          <a class="flink" href="mailto:jonathanlukwichi29@gmail.com" style="text-decoration:none; color:#AEB8D6; font-size:14.5px;">jonathanlukwichi29@gmail.com</a>
+          <a class="flink" href="https://linkedin.com/in/jonathan-lukwichi-24691b24b" target="_blank" rel="noopener" style="text-decoration:none; color:#AEB8D6; font-size:14.5px;">LinkedIn</a>
+          <a class="flink" href="https://github.com/Jonathan-Lukwichi" target="_blank" rel="noopener" style="text-decoration:none; color:#AEB8D6; font-size:14.5px;">GitHub</a>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div style="max-width:1240px; margin:40px auto 0; padding-top:24px; border-top:1px solid rgba(255,255,255,0.08); display:flex; flex-wrap:wrap; gap:12px; justify-content:space-between; color:#5F6B8E; font-size:13px;">
+    <span>© 2026 Jonathan Lukwichi · JLW Analytics · Pretoria, South Africa</span>
+    <span style="font-family:'Space Mono',monospace;">Open to relocation · EN / FR bilingual</span>
+  </div>
+</footer>

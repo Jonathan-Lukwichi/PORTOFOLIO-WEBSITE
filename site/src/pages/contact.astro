@@ -1,0 +1,86 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+// QR target — repoint to the live site URL once deployed.
+const qrUrl = 'https://linkedin.com/in/jonathan-lukwichi-24691b24b';
+
+const vision = [
+  { title: 'The problem', body: "Spreadsheets can't optimise, can't predict, can't simulate a what-if safely, and break when the person who built them leaves. Decisions get made blind." },
+  { title: 'The opportunity', body: 'An underserved market — manufacturing and SMEs largely unaddressed, heavy industry partly reliant on foreign vendors. No independent, proven ROI benchmark exists. That is the sharpest differentiator.' },
+  { title: 'Why this works', body: "Local, vendor-neutral, right-sized and affordable — combining operations theory, simulation and applied machine learning, with value proven on the client's own data first." },
+];
+---
+<BaseLayout title="Vision & Contact — Jonathan Lukwichi | JLW Analytics" active="contact">
+  <!-- VISION IN BRIEF -->
+  <section data-reveal style="max-width:1240px; margin:0 auto; padding:clamp(40px,6vw,80px) clamp(20px,5vw,56px) clamp(20px,3vw,32px); opacity:1; transform:translateY(20px); transition:transform .8s cubic-bezier(.2,.7,.2,1);">
+    <div style="font-family:'Space Mono',monospace; font-size:13px; letter-spacing:0.18em; text-transform:uppercase; color:#4F7CFF; margin-bottom:16px;">// The bigger picture</div>
+    <h1 data-split style="font-family:'Sora',sans-serif; font-weight:800; font-size:clamp(30px,4.6vw,58px); line-height:1.06; letter-spacing:-0.03em; margin:0 0 18px; max-width:840px; color:#ECF1FF;">From spreadsheet to an intelligent operations platform.</h1>
+    <p style="font-size:17.5px; line-height:1.7; color:#94A1C4; max-width:720px; margin:0 0 44px;">Industry still runs its most important operational decisions — forecasting, inventory, planning and scheduling — on manual spreadsheets. The technology to do better is mature; adoption lags. That gap is the opportunity.</p>
+    <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(min(280px,100%),1fr)); gap:18px;">
+      {vision.map((v) => (
+        <div style="background:#111A33; border:1px solid rgba(255,255,255,0.07); border-radius:20px; padding:28px 26px;">
+          <h3 style="font-family:'Sora',sans-serif; font-weight:700; font-size:19px; margin:0 0 10px; color:#4F7CFF;">{v.title}</h3>
+          <p style="font-size:15px; line-height:1.6; color:#94A1C4; margin:0;">{v.body}</p>
+        </div>
+      ))}
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section data-reveal style="max-width:1240px; margin:0 auto; padding:clamp(40px,6vw,80px) clamp(20px,5vw,56px) clamp(56px,8vw,104px); opacity:1; transform:translateY(26px); transition:transform .8s cubic-bezier(.2,.7,.2,1);">
+    <div style="background:#070C1A; border:1px solid rgba(255,255,255,0.08); border-radius:32px; overflow:hidden; display:flex; flex-wrap:wrap;">
+      <div style="flex:1 1 420px; min-width:280px; padding:clamp(32px,4.5vw,60px); color:#C4CDE8; position:relative;">
+        <div style="font-family:'Space Mono',monospace; font-size:13px; letter-spacing:0.18em; text-transform:uppercase; color:#4F7CFF; margin-bottom:16px;">// Let's talk</div>
+        <h2 style="font-family:'Sora',sans-serif; font-weight:800; font-size:clamp(28px,4vw,48px); line-height:1.06; letter-spacing:-0.025em; margin:0 0 16px; color:#ECF1FF;">Let's find your money answer.</h2>
+        <p style="font-size:17px; line-height:1.65; color:#94A1C4; margin:0 0 32px; max-width:480px;">About to spend on capacity, fleet, staffing or equipment? A decision twin lets you test the change on your own data first. I start with a small, fixed-scope pilot and deliver a clear recommendation with the numbers behind it.</p>
+        <div style="display:flex; flex-direction:column; gap:14px; max-width:440px;">
+          <a class="contact-link" href="mailto:jonathanlukwichi29@gmail.com" style="display:flex; align-items:center; gap:14px; text-decoration:none; background:rgba(255,255,255,0.04); border:1px solid rgba(255,255,255,0.1); border-radius:14px; padding:15px 18px; transition:background .25s, border-color .25s;">
+            <span style="width:40px; height:40px; border-radius:10px; background:rgba(79,124,255,0.14); display:flex; align-items:center; justify-content:center; flex:0 0 auto;"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#4F7CFF" stroke-width="1.8"><rect x="3" y="5" width="18" height="14" rx="2.5"></rect><path d="M3.5 7l8.5 6 8.5-6"></path></svg></span>
+            <span><span style="display:block; font-size:12px; color:#94A1C4;">Email</span><span style="display:block; font-size:15.5px; font-weight:600; color:#ECF1FF;">jonathanlukwichi29@gmail.com</span></span>
+          </a>
+          <a class="contact-link" href="tel:+27847314600" style="display:flex; align-items:center; gap:14px; text-decoration:none; background:rgba(255,255,255,0.04); border:1px solid rgba(255,255,255,0.1); border-radius:14px; padding:15px 18px; transition:background .25s, border-color .25s;">
+            <span style="width:40px; height:40px; border-radius:10px; background:rgba(79,124,255,0.14); display:flex; align-items:center; justify-content:center; flex:0 0 auto;"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#4F7CFF" stroke-width="1.8"><path d="M5 4h4l2 5-3 2a12 12 0 0 0 5 5l2-3 5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2z"></path></svg></span>
+            <span><span style="display:block; font-size:12px; color:#94A1C4;">Phone</span><span style="display:block; font-size:15.5px; font-weight:600; color:#ECF1FF;">+27 84 731 4600</span></span>
+          </a>
+          <div style="display:flex; gap:14px; flex-wrap:wrap;">
+            <a class="contact-link" href="https://linkedin.com/in/jonathan-lukwichi-24691b24b" target="_blank" rel="noopener" style="flex:1 1 auto; display:flex; align-items:center; gap:12px; text-decoration:none; background:rgba(255,255,255,0.04); border:1px solid rgba(255,255,255,0.1); border-radius:14px; padding:15px 18px; transition:background .25s, border-color .25s;">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="#4F7CFF"><path d="M20.45 20.45h-3.55v-5.57c0-1.33-.03-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.06 2.06 0 1 1 0-4.13 2.06 2.06 0 0 1 0 4.13zM7.12 20.45H3.56V9h3.56v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.73v20.54C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.73V1.73C24 .77 23.2 0 22.22 0z"></path></svg>
+              <span style="font-size:15px; font-weight:600; color:#ECF1FF;">LinkedIn</span>
+            </a>
+            <a class="contact-link" href="https://github.com/Jonathan-Lukwichi" target="_blank" rel="noopener" style="flex:1 1 auto; display:flex; align-items:center; gap:12px; text-decoration:none; background:rgba(255,255,255,0.04); border:1px solid rgba(255,255,255,0.1); border-radius:14px; padding:15px 18px; transition:background .25s, border-color .25s;">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="#4F7CFF"><path d="M12 .3a12 12 0 0 0-3.8 23.4c.6.1.8-.26.8-.58v-2.03c-3.34.72-4.04-1.61-4.04-1.61-.55-1.39-1.34-1.76-1.34-1.76-1.08-.74.09-.73.09-.73 1.2.09 1.83 1.24 1.83 1.24 1.07 1.83 2.81 1.3 3.5 1 .1-.78.42-1.3.76-1.6-2.67-.3-5.47-1.33-5.47-5.93 0-1.31.47-2.38 1.24-3.22-.13-.3-.54-1.52.11-3.18 0 0 1.01-.32 3.3 1.23a11.5 11.5 0 0 1 6.01 0c2.29-1.55 3.3-1.23 3.3-1.23.65 1.66.24 2.88.12 3.18.77.84 1.23 1.91 1.23 3.22 0 4.61-2.8 5.63-5.48 5.92.43.37.81 1.1.81 2.22v3.29c0 .32.22.69.82.57A12 12 0 0 0 12 .3z"></path></svg>
+              <span style="font-size:15px; font-weight:600; color:#ECF1FF;">GitHub</span>
+            </a>
+          </div>
+        </div>
+      </div>
+      <div style="flex:1 1 320px; min-width:280px; background:linear-gradient(150deg,#4F7CFF,#7C5CFF); padding:clamp(32px,4.5vw,60px); display:flex; flex-direction:column; align-items:center; justify-content:center; text-align:center; position:relative; overflow:hidden;">
+        <div style="position:absolute; bottom:-70px; left:-40px; width:240px; height:240px; border-radius:50%; background:rgba(255,255,255,0.16); animation:blobB 16s ease-in-out infinite;"></div>
+        <div style="position:relative; z-index:1;">
+          <div style="font-family:'Space Mono',monospace; font-size:12px; letter-spacing:0.18em; text-transform:uppercase; color:rgba(255,255,255,0.7); margin-bottom:18px;">Scan to connect</div>
+          <div style="background:#FFFFFF; border-radius:20px; padding:20px; box-shadow:0 18px 40px rgba(0,0,0,0.3); display:inline-block;">
+            <canvas id="qrcanvas" width="210" height="210" style="display:block; width:210px; height:210px;"></canvas>
+          </div>
+          <p style="font-size:14.5px; line-height:1.55; color:rgba(255,255,255,0.78); margin:20px auto 0; max-width:240px;">Point your camera here to open my profile and start a conversation.</p>
+          <div style="font-family:'Space Mono',monospace; font-size:11px; color:rgba(255,255,255,0.6); margin-top:10px;">Jonathan Lukwichi · JLW Analytics</div>
+        </div>
+      </div>
+    </div>
+  </section>
+</BaseLayout>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/qrious/4.0.2/qrious.min.js" is:inline></script>
+<script define:vars={{ qrUrl }} is:inline>
+  (function () {
+    let tries = 0;
+    const gen = () => {
+      const canvas = document.getElementById('qrcanvas');
+      if (canvas && window.QRious) {
+        new window.QRious({ element: canvas, value: qrUrl, size: 210, foreground: '#0A1124', background: '#FFFFFF', level: 'M' });
+      } else if (tries++ < 60) {
+        setTimeout(gen, 200);
+      }
+    };
+    gen();
+  })();
+</script>

@@ -1,0 +1,164 @@
+---
+import CompanyLayout from '../../layouts/CompanyLayout.astro';
+
+const services = ['Simulation & digital twins', 'Forecasting & ML', 'Supply-chain & operations', 'Decision tooling & dashboards', 'Not sure yet'];
+---
+<CompanyLayout title="Request a quote — JLW Analytics" active="contact">
+  <section data-reveal style="max-width:1240px; margin:0 auto; padding:clamp(40px,6vw,80px) clamp(20px,5vw,56px) clamp(56px,8vw,104px); opacity:1; transform:translateY(20px); transition:transform .8s cubic-bezier(.2,.7,.2,1);">
+    <div style="display:flex; flex-wrap:wrap; gap:clamp(32px,5vw,64px); align-items:flex-start;">
+      <!-- LEFT: pitch + details -->
+      <div style="flex:1 1 380px; min-width:280px;">
+        <div style="font-family:'Space Mono',monospace; font-size:13px; letter-spacing:0.18em; text-transform:uppercase; color:#22D3EE; margin-bottom:16px;">// Let's talk</div>
+        <h1 data-split style="font-family:'Sora',sans-serif; font-weight:800; font-size:clamp(32px,4.6vw,56px); line-height:1.06; letter-spacing:-0.03em; margin:0 0 18px; color:#ECEEF6;">Request a quote — or a free consultation.</h1>
+        <p style="font-size:17px; line-height:1.7; color:#A7AABB; margin:0 0 28px; max-width:480px;">Describe the call you're about to make — a capacity, fleet, staffing, inventory or equipment decision. Ask for a <span style="color:#ECEEF6; font-weight:600;">fixed-price quote</span> on a pilot, or book a <span style="color:#ECEEF6; font-weight:600;">free consultation</span> first to talk it through. Either way, you can simply <a href="mailto:jonathanlukwichi29@gmail.com" style="color:#22D3EE; font-weight:600; text-decoration:none;">send us an email</a> and we'll reply within two business days.</p>
+        <div style="display:flex; flex-direction:column; gap:14px; max-width:440px;">
+          <a class="contact-link" href="mailto:jonathanlukwichi29@gmail.com" style="display:flex; align-items:center; gap:14px; text-decoration:none; background:rgba(255,255,255,0.04); border:1px solid rgba(255,255,255,0.1); border-radius:14px; padding:15px 18px; transition:background .25s, border-color .25s, box-shadow .25s;">
+            <span style="width:40px; height:40px; border-radius:10px; background:rgba(8,145,178,0.16); display:flex; align-items:center; justify-content:center; flex:0 0 auto;"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#22D3EE" stroke-width="1.8"><rect x="3" y="5" width="18" height="14" rx="2.5"></rect><path d="M3.5 7l8.5 6 8.5-6"></path></svg></span>
+            <span><span style="display:block; font-size:12px; color:#A7AABB;">Email</span><span style="display:block; font-size:15.5px; font-weight:600; color:#ECEEF6;">jonathanlukwichi29@gmail.com</span></span>
+          </a>
+          <a class="contact-link" href="tel:+27847314600" style="display:flex; align-items:center; gap:14px; text-decoration:none; background:rgba(255,255,255,0.04); border:1px solid rgba(255,255,255,0.1); border-radius:14px; padding:15px 18px; transition:background .25s, border-color .25s, box-shadow .25s;">
+            <span style="width:40px; height:40px; border-radius:10px; background:rgba(8,145,178,0.16); display:flex; align-items:center; justify-content:center; flex:0 0 auto;"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#22D3EE" stroke-width="1.8"><path d="M5 4h4l2 5-3 2a12 12 0 0 0 5 5l2-3 5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2z"></path></svg></span>
+            <span><span style="display:block; font-size:12px; color:#A7AABB;">Phone</span><span style="display:block; font-size:15.5px; font-weight:600; color:#ECEEF6;">+27 84 731 4600</span></span>
+          </a>
+        </div>
+      </div>
+
+      <!-- RIGHT: quote form -->
+      <div class="scard" data-reveal style="flex:1 1 420px; min-width:300px; opacity:1; transform:translateY(24px); transition:transform .7s cubic-bezier(.2,.7,.2,1), border-color .3s, box-shadow .3s; border-radius:24px; padding:clamp(28px,3.5vw,40px);">
+        <form id="quoteform" novalidate>
+          <!-- Request type toggle -->
+          <div style="margin-bottom:20px;">
+            <span style="display:block; font-size:13px; font-weight:600; color:#C4CDE8; margin-bottom:9px;">What are you after?</span>
+            <div id="typetoggle" style="display:grid; grid-template-columns:1fr 1fr; gap:8px;">
+              <button type="button" data-type="quote" class="typebtn is-active" style="cursor:pointer; font-family:'Sora',sans-serif; font-size:14px; font-weight:700; padding:13px 14px; border-radius:12px; border:1px solid transparent; background:linear-gradient(120deg,#0891B2,#1E5AA8); color:#FFFFFF; transition:all .2s;">Request a quote</button>
+              <button type="button" data-type="consult" class="typebtn" style="cursor:pointer; font-family:'Sora',sans-serif; font-size:14px; font-weight:700; padding:13px 14px; border-radius:12px; border:1px solid rgba(255,255,255,0.14); background:rgba(6,6,6,0.6); color:#B4BEDC; transition:all .2s;">Free consultation</button>
+            </div>
+            <input type="hidden" name="reqtype" value="quote" />
+          </div>
+          <div style="display:grid; grid-template-columns:1fr 1fr; gap:16px; margin-bottom:16px;">
+            <label style="display:block;">
+              <span style="display:block; font-size:13px; font-weight:600; color:#C4CDE8; margin-bottom:7px;">Name</span>
+              <input name="name" required type="text" placeholder="Your name" style="width:100%; background:rgba(6,6,6,0.6); border:1px solid rgba(255,255,255,0.14); border-radius:12px; padding:13px 14px; color:#ECEEF6; font-family:'Sora',sans-serif; font-size:15px;" />
+            </label>
+            <label style="display:block;">
+              <span style="display:block; font-size:13px; font-weight:600; color:#C4CDE8; margin-bottom:7px;">Company</span>
+              <input name="company" type="text" placeholder="Organisation" style="width:100%; background:rgba(6,6,6,0.6); border:1px solid rgba(255,255,255,0.14); border-radius:12px; padding:13px 14px; color:#ECEEF6; font-family:'Sora',sans-serif; font-size:15px;" />
+            </label>
+          </div>
+          <label style="display:block; margin-bottom:16px;">
+            <span style="display:block; font-size:13px; font-weight:600; color:#C4CDE8; margin-bottom:7px;">Email</span>
+            <input name="email" required type="email" placeholder="you@company.com" style="width:100%; background:rgba(6,6,6,0.6); border:1px solid rgba(255,255,255,0.14); border-radius:12px; padding:13px 14px; color:#ECEEF6; font-family:'Sora',sans-serif; font-size:15px;" />
+          </label>
+          <label style="display:block; margin-bottom:16px;">
+            <span style="display:block; font-size:13px; font-weight:600; color:#C4CDE8; margin-bottom:7px;">What service fits best?</span>
+            <select name="service" style="width:100%; background:rgba(6,6,6,0.6); border:1px solid rgba(255,255,255,0.14); border-radius:12px; padding:13px 14px; color:#ECEEF6; font-family:'Sora',sans-serif; font-size:15px;">
+              {services.map((s) => (<option value={s}>{s}</option>))}
+            </select>
+          </label>
+          <label style="display:block; margin-bottom:22px;">
+            <span style="display:block; font-size:13px; font-weight:600; color:#C4CDE8; margin-bottom:7px;">The decision you're about to make</span>
+            <textarea name="message" required rows="4" placeholder="e.g. We're about to buy 6 more haul trucks — is that the right number?" style="width:100%; background:rgba(6,6,6,0.6); border:1px solid rgba(255,255,255,0.14); border-radius:12px; padding:13px 14px; color:#ECEEF6; font-family:'Sora',sans-serif; font-size:15px; resize:vertical;"></textarea>
+          </label>
+          <button class="btn-primary" type="submit" style="width:100%; display:inline-flex; align-items:center; justify-content:center; gap:10px; cursor:pointer; border:none; color:#FFFFFF; font-family:'Sora',sans-serif; font-weight:700; font-size:16px; padding:16px 28px; border-radius:44px;">
+            <span id="submitlabel">Send quote request</span>
+            <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"></path><path d="M13 6l6 6-6 6"></path></svg>
+          </button>
+          <p id="formnote" style="font-size:12.5px; color:#6B7080; margin:14px 0 0; text-align:center; font-family:'Space Mono',monospace;">We reply within two business days. Your details aren’t shared.</p>
+        </form>
+      </div>
+    </div>
+  </section>
+</CompanyLayout>
+
+<script>
+  // Static-site quote form → builds a mailto with the details pre-filled.
+  // Swap for a real endpoint (Formspree / API route) when a backend is added.
+  const form = document.getElementById('quoteform') as HTMLFormElement | null;
+  const note = document.getElementById('formnote');
+  const hidden = form ? form.querySelector<HTMLInputElement>('input[name="reqtype"]') : null;
+  const submitLabel = document.getElementById('submitlabel');
+
+  // Request-type toggle (Quote vs Free consultation).
+  const typeBtns = Array.from(document.querySelectorAll<HTMLButtonElement>('.typebtn'));
+  typeBtns.forEach((b) => {
+    b.addEventListener('click', () => {
+      const t = b.getAttribute('data-type') || 'quote';
+      typeBtns.forEach((x) => {
+        const on = x === b;
+        x.style.background = on ? 'linear-gradient(120deg,#0891B2,#1E5AA8)' : 'rgba(6,6,6,0.6)';
+        x.style.color = on ? '#FFFFFF' : '#B4BEDC';
+        x.style.borderColor = on ? 'transparent' : 'rgba(255,255,255,0.14)';
+      });
+      if (hidden) hidden.value = t;
+      if (submitLabel) submitLabel.textContent = t === 'consult' ? 'Request free consultation' : 'Send quote request';
+    });
+  });
+
+  // Pre-select toggle from ?type= (mirrors the homepage hero choice).
+  try {
+    const wanted = new URLSearchParams(window.location.search).get('type');
+    if (wanted === 'consult' || wanted === 'quote') {
+      const match = typeBtns.find((b) => b.getAttribute('data-type') === wanted);
+      if (match) match.click();
+    }
+  } catch (_) { /* no-op */ }
+
+  // Backend: create a form at https://formspree.io (free) and paste its ID below,
+  // e.g. 'https://formspree.io/f/abcdwxyz'. Until then the form falls back to
+  // opening a pre-filled email — so it works either way.
+  const FORM_ENDPOINT = 'https://formspree.io/f/YOUR_FORM_ID';
+
+  const setNote = (msg: string, color?: string) => {
+    if (note) { note.textContent = msg; note.style.color = color || '#6B7080'; }
+  };
+
+  if (form) {
+    form.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      if (!form.checkValidity()) { form.reportValidity(); return; }
+      const data = new FormData(form);
+      const name = (data.get('name') || '').toString();
+      const company = (data.get('company') || '').toString();
+      const email = (data.get('email') || '').toString();
+      const service = (data.get('service') || '').toString();
+      const message = (data.get('message') || '').toString();
+      const reqtype = (data.get('reqtype') || 'quote').toString();
+      const isConsult = reqtype === 'consult';
+      const label = isConsult ? 'Free consultation request' : 'Quote request';
+
+      // Readable subject + human-friendly request type for the email Formspree sends.
+      data.set('_subject', `${label} — ${name}${company ? ' (' + company + ')' : ''}`);
+      data.set('reqtype', isConsult ? 'Free consultation' : 'Quote');
+
+      const configured = FORM_ENDPOINT.indexOf('YOUR_FORM_ID') === -1;
+      const submitBtn = form.querySelector('button[type="submit"]') as HTMLButtonElement | null;
+
+      if (configured) {
+        const original = submitLabel ? submitLabel.textContent : '';
+        if (submitLabel) submitLabel.textContent = 'Sending…';
+        if (submitBtn) submitBtn.disabled = true;
+        try {
+          const res = await fetch(FORM_ENDPOINT, { method: 'POST', body: data, headers: { Accept: 'application/json' } });
+          if (!res.ok) throw new Error('bad status');
+          form.reset();
+          if (hidden) hidden.value = 'quote';
+          if (submitLabel) submitLabel.textContent = 'Sent ✓';
+          setNote('✓ Thanks — your request is in. We’ll reply within two business days.', '#22D3EE');
+        } catch (err) {
+          if (submitLabel) submitLabel.textContent = original || 'Send quote request';
+          setNote('Couldn’t send the form — please email us directly at jonathanlukwichi29@gmail.com.', '#E65757');
+        } finally {
+          if (submitBtn) submitBtn.disabled = false;
+        }
+      } else {
+        // Fallback: open a pre-filled email.
+        const subject = encodeURIComponent(`${label} — ${name}${company ? ' (' + company + ')' : ''}`);
+        const body = encodeURIComponent(
+          `Request type: ${isConsult ? 'Free consultation' : 'Quote'}\nName: ${name}\nCompany: ${company}\nEmail: ${email}\nService: ${service}\n\nDecision to make:\n${message}`
+        );
+        window.location.href = `mailto:jonathanlukwichi29@gmail.com?subject=${subject}&body=${body}`;
+        setNote('Your email client should now be open — just hit send.', '#22D3EE');
+      }
+    });
+  }
+</script>
