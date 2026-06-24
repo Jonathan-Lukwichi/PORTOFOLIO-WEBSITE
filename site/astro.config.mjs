@@ -8,5 +8,6 @@ import sitemap from '@astrojs/sitemap';
 // ⬇️ CHANGE THIS to your real domain before deploying.
 export default defineConfig({
   site: 'https://jlwanalytics.com',
-  integrations: [sitemap()],
+  // Keep the private print-only card out of the public sitemap.
+  integrations: [sitemap({ filter: (page) => !page.includes('/card') })],
 });
